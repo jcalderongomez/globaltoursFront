@@ -9,6 +9,7 @@ import { LugarRoutingModule } from './lugar-routing.module';
 import { MaterialModule } from '../material/material.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActualizarLugarComponent } from './actualizar-lugar/actualizar-lugar.component';
 
 
 
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditarComponent,
     HomeComponent,
     ListarComponent,
+    ActualizarLugarComponent,
   ],
   imports: [
     CommonModule,
