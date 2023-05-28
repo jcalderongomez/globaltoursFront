@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { ILugar } from '../interfaces/ILugar';
+import { ILugar, Lugar } from '../interfaces/ILugar';
 import { environment } from 'src/environments/environment';
 
 
@@ -10,17 +10,18 @@ import { environment } from 'src/environments/environment';
 })
 export class LugarService {
   apiUrl: string = environment.apiUrl;
-  lugarUrl: string = `${this.apiUrl}`;
+  lugarUrl: string = `${this.apiUrl}lugares`;
 
-  resultados:  ILugar[] = [];
+  resultados:  Lugar[] = [];
   
   constructor(private http: HttpClient) { }
 
-  listarLugares()
+  getLugares()
   {
-    this.http.get<ILugar[]>(this.lugarUrl)
-    .subscribe(resp => {
-      this.resultados = resp;
+    this.http.get<ILugar>(this.lugarUrl)
+    .subscribe(resp=>{
+      console.log(resp.resultado);
+      this.resultados = resp.resultado
     })
   }
   

@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ListarComponent } from './listar/listar.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+
+
 import { MaterialModule } from '../material/material.module';
 import { CategoriaRoutingModule } from './categoria-routing.module';
 import { ActualizarCategoriaComponent } from './actualizar-categoria/actualizar-categoria.component';

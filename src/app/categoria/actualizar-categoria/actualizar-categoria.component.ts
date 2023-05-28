@@ -22,7 +22,7 @@ export class ActualizarCategoriaComponent implements OnInit {
                   id: number}, private service:CategoriaService, private router: Router) { 
                     this.id = data.id;
                     this.form = fb.group({
-                      nombres: [data.nombre, Validators.required],
+                      nombre: [data.nombre, Validators.required],
                       estado: [data.estado, Validators.required]
                     })
                   }

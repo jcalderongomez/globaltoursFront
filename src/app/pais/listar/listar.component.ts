@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaisService } from '../pais.service';
-import { IPais } from 'src/app/interfaces/IPais';
+import { IPais, Pais } from 'src/app/interfaces/IPais';
 import { MatDialog } from '@angular/material/dialog';
 import { ActualizarPaisComponent } from '../actualizar-pais/actualizar-pais.component';
 
@@ -16,14 +16,14 @@ export class ListarComponent implements OnInit {
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.paisService.listarPaises();
+    this.paisService.getPaises();
   }
 
   get resultados(){
     return this.paisService.resultados;
   }
 
-  actualizarPais(pais : IPais)
+  actualizarPais(pais : Pais)
   {
     console.log(pais);
     this.dialog.open(ActualizarPaisComponent,{

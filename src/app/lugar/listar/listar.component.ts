@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LugarService } from '../lugar.service';
-import { ILugar } from 'src/app/interfaces/ILugar';
+import { Lugar } from 'src/app/interfaces/ILugar';
 import { MatDialog } from '@angular/material/dialog';
 import { ActualizarLugarComponent } from '../actualizar-lugar/actualizar-lugar.component';
 
@@ -16,14 +16,14 @@ export class ListarComponent implements OnInit {
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.lugarService.listarLugares();
+    this.lugarService.getLugares();
   }
 
   get resultados(){
     return this.lugarService.resultados;
   }
 
-  actualizarLugar(lugar : ILugar)
+  actualizarLugar(lugar : Lugar)
   {
     console.log(lugar);
     this.dialog.open(ActualizarLugarComponent,{

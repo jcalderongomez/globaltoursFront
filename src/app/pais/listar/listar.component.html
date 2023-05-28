@@ -1,6 +1,7 @@
 <div class="contenedor">
     <div class="contenedor-item">
         <h1> Listado de Paises</h1>
+        <button [routerLink]="['../crear']" mat-raised-button color="primary">N U E V O</button>
     </div>
 
     <div *ngIf="resultados">
@@ -25,7 +26,7 @@
                   <button (click)="actualizarPais(element)" mat-raised-button color="primary">
                     <b><mat-icon color="white">edit</mat-icon></b>
                   </button>
-                    <button [routerLink]="['eliminar/', element.id]" mat-raised-button color="warn">
+                    <button [routerLink]="['../eliminar/', element.id]" mat-raised-button color="warn">
                       <b><mat-icon color="white">delete</mat-icon></b>
                     </button>
                 </td>

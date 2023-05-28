@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ICategoria } from 'src/app/interfaces/ICategoria';
 import { CategoriaService } from '../categoria.service';
 import { MatDialog } from '@angular/material/dialog';
+import { Categoria, ICategoria } from 'src/app/interfaces/ICategoria';
 import { ActualizarCategoriaComponent } from '../actualizar-categoria/actualizar-categoria.component';
 
 @Component({
@@ -15,24 +15,22 @@ export class ListarComponent implements OnInit {
   constructor(private categoriaService: CategoriaService,
     private dialog: MatDialog) { }
 
-  ngOnInit(): void {
-    this.categoriaService.listarCategorias();
-  }
+    ngOnInit(): void {
+      this.categoriaService.getCategorias();
+    }
 
-  get resultados(){
-    return this.categoriaService.resultados;
-  }
-
-  actualizarCategoria(categoria : ICategoria)
-  {
-    console.log(categoria);
-    this.dialog.open(ActualizarCategoriaComponent,{
-      data:{
-        nombre: categoria.nombre,
-        estado: categoria.estado,
-        id: categoria.id
-      }
-    })
-
-  }
+    get resultados(){
+      return this.categoriaService.resultados;
+    }
+  
+    actualizarCategoria(categoria : Categoria){
+      console.log(categoria);
+      this.dialog.open(ActualizarCategoriaComponent,{
+        data:{
+          nombre: categoria.nombre,
+          estado: categoria.estado,
+          id: categoria.id
+        }
+      })
+    }
 }

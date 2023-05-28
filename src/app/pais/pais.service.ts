@@ -1,24 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { IPais } from '../interfaces/IPais';
+import { IPais, Pais } from '../interfaces/IPais';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaisService {
-  apiUrl: string = environment.apiUrl;
-  categoriaUrl: string = `${this.apiUrl}/paises`;
+  apiUrl: string = `${environment.apiUrl}paises/`;
 
-  resultados:  IPais[] = [];
+  resultados: Pais[] = [];
   
   constructor(private http: HttpClient) { }
 
-  listarPaises()
+  getPaises()
   {
-    this.http.get<IPais[]>(this.categoriaUrl)
-    .subscribe(resp => {
-      this.resultados = resp;
+    this.http.get<IPais>(this.apiUrl)
+    .subscribe(resp=>{
+      this.resultados = resp.resultado
     })
   }
 
