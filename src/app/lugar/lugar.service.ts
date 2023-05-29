@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class LugarService {
-  apiUrl: string = environment.apiUrl;
-  lugarUrl: string = `${this.apiUrl}lugares`;
+  apiUrl: string = `${environment.apiUrl}lugares/`;
+
 
   resultados:  Lugar[] = [];
   
@@ -18,7 +18,7 @@ export class LugarService {
 
   getLugares()
   {
-    this.http.get<ILugar>(this.lugarUrl)
+    this.http.get<ILugar>(this.apiUrl)
     .subscribe(resp=>{
       console.log(resp.resultado);
       this.resultados = resp.resultado
@@ -26,6 +26,8 @@ export class LugarService {
   }
   
   getLugar(id: number){
+
+    console.log(this.apiUrl+id)
     return this.http.get(this.apiUrl+id);
   }
 

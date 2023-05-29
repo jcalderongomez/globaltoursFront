@@ -1,1 +1,18 @@
-<p>crear works!</p>
+<div class="crear-categoria-field">
+<mat-card>
+    <span >CREAR NUEVA CUENTA</span>
+    <br/>
+    <form [formGroup]="crearCategoria" (ngSubmit)="onSubmit()" class="crear-categoria-form">
+        <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName="nombre">
+        </mat-form-field>
+        <br/>
+            <mat-checkbox  formControlName="estado">Estado</mat-checkbox>
+        <br/>
+        <button mat-raised-button color="primary">
+            Crear
+        </button>
+    </form>
+</mat-card>
+
+</div>

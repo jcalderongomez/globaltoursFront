@@ -8,3 +8,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 table {
     width: 100%;
 }
+
+
+.crear-categoria-form{
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%
+}
+
+.crear-categoria-field{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.crear-categoria-btn{
+    position: relative;
+}
+
+.crear-pais-form{
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%
+}
+
+.crear-categoria-field{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.crear-categoria-btn{
+    position: relative;
+}
+
+
+
+

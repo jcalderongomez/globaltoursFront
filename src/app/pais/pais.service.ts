@@ -10,6 +10,7 @@ export class PaisService {
   apiUrl: string = `${environment.apiUrl}paises/`;
 
   resultados: Pais[] = [];
+
   
   constructor(private http: HttpClient) { }
 
@@ -20,6 +21,7 @@ export class PaisService {
       this.resultados = resp.resultado
     })
   }
+
 
   getPais(id: number){
     return this.http.get(this.apiUrl+id);

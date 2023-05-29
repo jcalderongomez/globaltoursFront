@@ -1,0 +1,17 @@
+.crear-lugar-form{
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%
+}
+
+.crear-lugar-field{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.crear-lugar-btn{
+    position: relative;
+}
+

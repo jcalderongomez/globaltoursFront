@@ -1,1 +1,22 @@
-<p>crear works!</p>
+
+
+<div class="crear-pais-form">
+<mat-card>
+    <span>Crear Nuevo Pais</span>
+    <br/>
+    <form [formGroup]="crearPais" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName="nombre">
+        </mat-form-field>
+        <br/>
+        
+            <mat-checkbox  formControlName="estado">Estado</mat-checkbox>
+        
+        <br/>
+        <button mat-raised-button color="primary" [disabled]="!crearPais.valid">
+            Crear
+        </button>
+    </form>
+</mat-card>
+
+</div>

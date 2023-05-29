@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { LugarService } from '../lugar.service';
 import { Router } from '@angular/router';
+import { PaisService } from 'src/app/pais/pais.service';
+import { CategoriaService } from '../../categoria/categoria.service';
 
 @Component({
   selector: 'app-actualizar-lugar',
@@ -10,11 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./actualizar-lugar.component.css']
 })
 export class ActualizarLugarComponent implements OnInit {
-
+  
+  opcionesPaises: any[]=[]; 
   form: FormGroup;
   id: number;
   
   constructor(private fb: FormBuilder,
+              private paisService: PaisService,
+              private categoriaService: CategoriaService,
               private dialogRef: MatDialogRef<ActualizarLugarComponent>,
               @Inject(MAT_DIALOG_DATA) private data: {
                   nombre: string, 
@@ -50,6 +55,14 @@ guardar(){
 }
 
   ngOnInit(): void {
+    
+    console.log(this.getPaises());
+    
   }
+
+  getPaises(){
+    this.paisService.getPaises();
+  }
+  
 
 }

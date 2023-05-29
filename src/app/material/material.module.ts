@@ -9,7 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from  '@angular/material/list';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [],
   imports: [
@@ -24,7 +25,10 @@ import { MatListModule } from  '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatSelectModule
+
   ],
 })
 export class MaterialModule { }

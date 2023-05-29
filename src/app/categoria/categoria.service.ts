@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CategoriaService {
-  apiUrl: string = `${environment.apiUrl}categorias/`;
+  apiUrl: string = `${environment.apiUrl}Categorias/`;
 
   resultados:  Categoria[] = [];
   
@@ -24,10 +24,13 @@ export class CategoriaService {
     return this.http.get(this.apiUrl+id);
   }
 
-  crearCategoria(categoria: ICategoria){
+
+  crearCategoria(categoria: Categoria){
+    console.log("valor de entrada: "+ categoria.nombre);
     return this.http.post(this.apiUrl, categoria);
   }
   
+
   actualizarCategoria(id: number, categoria: ICategoria)
   {   
     console.log(this.apiUrl+id, categoria);

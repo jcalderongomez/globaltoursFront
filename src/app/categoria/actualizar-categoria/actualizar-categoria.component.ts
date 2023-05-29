@@ -21,9 +21,11 @@ export class ActualizarCategoriaComponent implements OnInit {
                   estado: string, 
                   id: number}, private service:CategoriaService, private router: Router) { 
                     this.id = data.id;
+                    console.log(data.estado);
                     this.form = fb.group({
                       nombre: [data.nombre, Validators.required],
-                      estado: [data.estado, Validators.required]
+                      estado: [data.estado]
+                      
                     })
                   }
 cerrar(){
